@@ -1,0 +1,309 @@
+ .girella-spin { animation: spinGirella 28s linear infinite; }
+  @keyframes spinGirella { 100% { transform: rotate(360deg); } }
+  @keyframes marqueeScroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee { display: flex; width: 200%; animation: marqueeScroll 40s linear infinite; }
+  .animate-marquee:hover { animation-play-state: paused; }
+
+  /* ===== STILI INTERNI SIMULATORE iPOS (Nativi WinForms) ===== */
+  .ipos-box * { box-sizing: border-box; font-family: Arial, 'Segoe UI', sans-serif; }
+  .ipos-box { 
+    background: #d4d7dc; 
+    color: #1a1a1a; 
+    font-size: 13px; 
+    position: relative; 
+    border: 2px solid #64748b; 
+    border-radius: 0px; 
+    overflow: hidden; 
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3); 
+    width: 100%;
+    min-height: 684px;
+    box-sizing: border-box;
+  }
+
+  .ipos-view { 
+    display: none; 
+    height: 680px; 
+    flex-direction: column; 
+    background: #e8ebf0; 
+  }
+
+  .ipos-view.active { display: flex; }
+
+  .ipos-main-area { flex: 1; display: flex; overflow: hidden; position: relative; }
+
+  .ipos-header {
+    background: #ffffff;
+    text-align: center;
+    padding: 4px 10px;
+    border-bottom: 1px solid #b8bec8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 76px;
+  }
+
+  .ipos-logo { font-size: 40px; font-weight: 900; color: #3f6fb5; letter-spacing: 1px; line-height: 1; display: inline-block; }
+  .ipos-logo .spiral { display: inline-block; width: 34px; height: 34px; vertical-align: middle; margin-left: 6px; background: conic-gradient(from 20deg,#5aa84e 0 60deg,#3f6fb5 60deg 140deg,#e8a33d 140deg 220deg,#5aa84e 220deg 300deg,#3f6fb5 300deg); border-radius: 50%; -webkit-mask: radial-gradient(circle,transparent 38%,#000 40%); mask: radial-gradient(circle,transparent 38%,#000 40%); opacity: .85; }
+  .ipos-tagline { font-style: italic; color: #555; font-size: 12px; margin-top: -2px; }
+
+  .ipos-searchbar { display: flex; align-items: center; gap: 8px; padding: 6px 10px; background: #e8ebf0; }
+  .ipos-searchbar .bc-icon { background: #fff; border: 1px solid #b8bec8; padding: 4px 6px; font-size: 11px; }
+  .ipos-searchbar input { flex: 1; background: #cfe0f0; border: 1px solid #9db8d4; height: 30px; padding: 0 10px; font-size: 14px; outline: none; }
+  .ipos-btn-clear { background: linear-gradient(#d9534f,#b52b27); color: #fff; border: 1px solid #8f1f1c; font-weight: bold; width: 38px; height: 30px; cursor: pointer; font-size: 14px; }
+
+  /* ===== SIDEBAR GRIGIA A TUTT'ALTEZZA ===== */
+  .ipos-sidebar {
+    width: 175px;
+    background: #d4d7dc;
+    border-left: 1px solid #b8bec8;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    gap: 6px;
+    align-self: stretch; 
+  }
+
+  .ipos-btn-uscita {
+    background: linear-gradient(180deg, #f8fafc 0%, #cbd5e1 100%);
+    border: 1px solid #94a3b8;
+    color: #1e293b;
+    padding: 5px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 6px; /* Stondato */
+    flex-shrink: 0;
+  }
+
+  .ipos-sidebar-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  /* BOTTONI LATERALI STONDATI */
+  .ipos-side-btn { 
+    border: 1px solid rgba(0,0,0,0.35); 
+    cursor: pointer; 
+    padding: 6px; 
+    text-align: left; 
+    color: #fff; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    user-select: none; 
+    border-radius: 6px; /* Angoli stondati richiesti da Massimo */
+  }
+  
+  .ipos-side-btn .lbl {
+    font-size: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    display: block;
+    line-height: 1.1;
+  }
+
+  .ipos-side-btn .ico-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .ipos-side-btn .ico-container.left {
+    justify-content: flex-start;
+    padding-left: 8px;
+  }
+
+  .ipos-side-btn.centered-icon-btn {
+    align-items: center;
+    text-align: center;
+  }
+  .ipos-side-btn.centered-icon-btn .ico-container {
+    justify-content: center !important;
+    padding-left: 0 !important;
+    width: 100%;
+  }
+
+  .ipos-side-btn:hover {
+    filter: brightness(1.08);
+  }
+
+  .ipos-side-btn:active { 
+    filter: brightness(.92); 
+  }
+
+  /* BOTTONE PAGAMENTO SEMPRE VERDE E STONDATO */
+  .ipos-btn-pagamento {
+    background: linear-gradient(180deg, #229648 0%, #135d2f 100%) ;
+    color: #fff !important;
+    border: 1px solid #0d4221 !important;
+    min-height: 76px;
+    border-radius: 6px !important;
+  }
+
+  .ipos-btn-pagamento.disabled {
+    background: linear-gradient(180deg, #2ecc71 0%, #27ae60 100%) !important; /* Sempre verde anche se disabilitato/vuoto */
+    color: #fff !important;
+    opacity: 0.9;
+    border: 1px solid #1e8449 !important;
+    border-radius: 6px !important;
+  }
+
+  .ipos-row-2btns {
+    display: flex;
+    gap: 4px;
+  }
+
+  .ipos-row-2btns .ipos-side-btn {
+    flex: 1;
+    min-height: 64px;
+    border-radius: 6px;
+  }
+  
+  .ipos-btn-funzioni {
+    background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
+  }
+  .ipos-btn-finanziario {
+    background: linear-gradient(180deg, #2dd4bf 0%, #0d9488 100%);
+  }
+  .ipos-btn-ricerca {
+    background: linear-gradient(180deg, #71a0a5 0%, #47747a 100%);
+    min-height: 72px;
+  }
+  .ipos-btn-cliente {
+    background: linear-gradient(180deg, #475569 0%, #0f172a 100%);
+    min-height: 72px;
+  }
+
+  /* ===== BOTTONI INATTIVI NELLA SIDEBAR DEL FILTRO (Stile Immagine 2) ===== */
+  .ipos-sidebar.inactive .ipos-side-btn,
+  .ipos-sidebar.inactive .ipos-btn-pagamento,
+  .ipos-sidebar.inactive .ipos-btn-funzioni,
+  .ipos-sidebar.inactive .ipos-btn-finanziario,
+  .ipos-sidebar.inactive .ipos-btn-ricerca,
+  .ipos-sidebar.inactive .ipos-btn-cliente {
+      filter: grayscale(0.45);
+      opacity: 0.76;
+      pointer-events: none !important;
+      cursor: not-allowed !important;
+  }
+
+  .ipos-content { flex: 1; display: flex; flex-direction: column; overflow: hidden; background: #fff; }
+  .ipos-receipt-table { width: 100%; border-collapse: collapse; background: #fff; }
+  .ipos-receipt-table th { background: #f4f6f8; border: 1px solid #d4d7dc; padding: 5px 8px; font-size: 11px; text-align: left; font-weight: normal; color: #333; }
+  .ipos-receipt-table td { border: 1px solid #e0e3e8; padding: 8px; font-size: 12px; }
+  .ipos-receipt-table tr.data td { background: linear-gradient(90deg,#4a7fbf,#2e5f9e); color: #fff; font-weight: bold; }
+  .ipos-receipt-table th:nth-child(n+4):nth-child(-n+8),
+  .ipos-receipt-table td:nth-child(n+4):nth-child(-n+8) {
+    padding-right: 6px;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .ipos-del-x { 
+    background: linear-gradient(#c96a5f, #a63d32); 
+    color: #fff; 
+    border: none; 
+    width: 100%; 
+    height: 100%; 
+    min-height: 26px;
+    font-weight: bold; 
+    cursor: pointer; 
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ipos-del-x:hover {
+    filter: brightness(1.1);
+  }
+  
+  .ipos-bottom-bar { display: flex; align-items: stretch; background: #e8ebf0; border-top: 1px solid #b8bec8; padding: 4px 8px; gap: 8px; }
+  .ipos-pts-block { display: flex; flex-direction: column; gap: 3px; width: 220px; }
+  .ipos-pts-row { display: flex; gap: 4px; align-items: center; font-size: 11px; }
+  .ipos-pts-row input { flex: 1; border: 1px solid #b8bec8; height: 22px; padding: 0 4px; }
+  .ipos-pts-icon { width: 26px; height: 22px; background: #5aa84e; border-radius: 2px; display: flex; align-items: center; justify-content: center; color: #fff; }
+  .ipos-pts-icon.blue { background: #3f6fb5; }
+  .ipos-btn-punti { background: #2e7d32; color: #fff; border: 1px solid #1e5c22; padding: 2px 8px; font-size: 11px; }
+  .ipos-sc-badge { background: linear-gradient(#3f6fb5,#1e4e8c); color: #fff; width: 75px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 13px; }
+  .ipos-total-banner { flex: 1; background: linear-gradient(180deg,#4a90d9,#1e5799); color: #fff; display: grid; grid-template-columns: minmax(0,1fr) 95px; align-items: stretch; font-size: 24px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,.4); position: relative; }
+  .ipos-subtotal-box { position: static; grid-column: 2; width: 95px; min-height: 44px; background: linear-gradient(#f0d98c,#d4b95a); color: #5a4a1a; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+  .ipos-bottom-bar #total-banner { grid-column: 1; justify-self: center; align-self: center; text-align: center; white-space: nowrap; }
+  .ipos-app-footer { background: #c9cdd4; border-top: 1px solid #b0b5bd; padding: 3px 10px; font-size: 10px; color: #555; display: flex; gap: 20px; }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .ipos-bottom-bar { gap: 4px; padding: 4px; }
+    .ipos-bottom-bar > .ipos-pts-block { width: 190px !important; min-width: 0; }
+    .ipos-bottom-bar > .ipos-sc-badge { width: 58px; flex-shrink: 0; font-size: 10px; }
+    .ipos-bottom-bar > .ipos-total-banner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 92px;
+      align-items: stretch;
+      min-width: 190px;
+      padding: 0 6px;
+      font-size: 16px;
+    }
+    .ipos-bottom-bar > .ipos-total-banner { grid-template-columns: minmax(0,1fr) 92px; }
+    .ipos-bottom-bar .ipos-subtotal-box {
+      width: 92px;
+      min-height: 44px;
+      font-size: 12px;
+    }
+  }
+
+  /* Overlay popup */
+  .ipos-overlay { display: none; position: absolute; inset: 0; background: rgba(0,0,0,.4); z-index: 50; align-items: center; justify-content: center; }
+  .ipos-overlay.open { display: flex; }
+  .ipos-win-popup { background: #e8ebf0; border: 1px solid #9aa1ab; box-shadow: 0 8px 30px rgba(0,0,0,.4); width: 480px; }
+  .ipos-win-title { background: linear-gradient(#fdfdfd,#e0e3e8); padding: 5px 8px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #333; }
+  .ipos-win-title .x { cursor: pointer; font-weight: bold; }
+  .ipos-win-body { display: flex; gap: 14px; padding: 20px; align-items: center; }
+  .ipos-qmark { width: 44px; height: 44px; border-radius: 50%; background: radial-gradient(circle at 35% 30%,#7db3e8,#2b5f9e); color: #fff; font-size: 24px; font-weight: bold; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ipos-win-actions { display: flex; justify-content: center; gap: 15px; padding: 10px 0 16px; }
+  .ipos-win-actions button { min-width: 80px; height: 30px; background: linear-gradient(#fdfdfd,#dfe2e7); border: 1px solid #9aa1ab; cursor: pointer; font-size: 12px; }
+
+  /* Catalogo & Dettaglio & Pagamento dentro il simulatore */
+  .ipos-page-topbar { display: flex; align-items: center; gap: 10px; padding: 6px 10px; background: #e8ebf0; border-bottom: 1px solid #b8bec8; }
+  .ipos-btn-indietro { display: flex; align-items: center; gap: 6px; background: linear-gradient(#f4f6f8,#d9dde3); border: 1px solid #9aa1ab; padding: 4px 12px; cursor: pointer; font-size: 12px; }
+  .ipos-catalog-grid { flex: 1; overflow: auto; padding: 10px; display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 10px; align-content: start; background: #f1f5f9; }
+  .ipos-prod-card { background: #fff; border: 1px solid #b8bec8; padding: 8px; cursor: pointer; display: flex; gap: 8px; min-height: 95px; }
+  .ipos-prod-card:hover { outline: 2px solid #3f6fb5; }
+  .ipos-size-matrix { border-collapse: collapse; margin: 10px; }
+  .ipos-size-matrix th, .ipos-size-matrix td { border: 1px solid #c5cad2; min-width: 50px; height: 26px; text-align: center; font-size: 11px; }
+  .ipos-size-matrix th { background: #f4f6f8; font-weight: bold; }
+  .ipos-size-matrix .color-cell { background: #c0392b; color: #fff; font-size: 10px; padding: 2px 4px; text-align: left; min-width: 160px; }
+  .ipos-size-cell { cursor: pointer; background: #fff; }
+  .ipos-size-cell:hover { background: #eaf2fb; }
+  .ipos-size-cell.sel { background: #3f6fb5; color: #fff; font-weight: bold; outline: 2px dashed #c0392b; }
+
+  /* Pulsante Barcode fedele all'originale */
+  .ipos-bc-btn {
+    background: #ffffff;
+    border: 1px solid #9aa1ab;
+    padding: 1px 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+  }
+  .ipos-bc-btn:hover {
+    background: #eaf2fb;
+    border-color: #3f6fb5;
+  }
+  .ipos-bc-btn:active {
+    background: #d0e0f5;
+  }
